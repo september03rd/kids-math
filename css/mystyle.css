@@ -1,0 +1,82 @@
+
+html, body {
+  font-family: Georgia, "Times New Roman",Times, serif;
+  color: white;
+  height: 98%;
+
+}
+.container {
+  background-color: #4B8A08;
+  width: auto;
+  height: 100%;
+}
+.coin {
+  display: inline-block;
+  font-size: 3em;
+}
+#pig {
+  display: none;
+}
+.score {
+  display: inline-block;
+  font-size: 2em;
+  font-family: "Fredoka One";
+}
+
+#question-title, #input-echo {
+  font-size: 6em;
+  font-family: "Fredoka One";
+}
+#question-description {
+  /* display:none */
+  height:30%;
+}
+#input-echo {
+  margin-left: 0.5em;
+}
+.keypad {
+  width: 9%;
+  height: 1.8em;
+  font-size: 3.5em;
+  margin-right: 0.5%;
+  margin-bottom: 2%;
+  font-family: "Fredoka One";
+  color: #fff;
+}
+
+.dropbtn {
+  background-color: #4B8A08;
+  color: white;
+  font-size: 3em;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-family: "Fredoka One";
+  font-size: 2em;
+}
+
+.dropdown-content div {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* .dropdown-content a:hover {background-color: #f1f1f1;} */
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #3e8e41;}

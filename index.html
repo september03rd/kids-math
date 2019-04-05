@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredoka+One">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/mystyle.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="dropdown" style="float:right;">
+    <button class="dropbtn"><i class="fas fa-plus"></i></button>
+    <div class="dropdown-content" id="puzzle-items">
+      <div ><i class="fas fa-plus"></i> 1</div>
+      <div ><i class="fas fa-plus"></i> 2</div>
+      <div ><i class="fas fa-plus"></i> 3</div>
+      <div ><i class="fas fa-plus"></i> Basic</div>
+      <div ><i class="fas fa-plus"></i> Carry</div>
+      <div ><i class="fas fa-plus"></i> 2-Digits</div>
+    </div>
+  </div>
+  <div class="dropdown" style="float:right;">
+    <button class="dropbtn"><i class="fas fa-minus"></i></button>
+    <div class="dropdown-content" id="puzzle-items">
+      <div ><i class="fas fa-minus"></i> Basic</div>
+      <div ><i class="fas fa-minus"></i> Trading</div>
+      <div ><i class="fas fa-minus"></i> 2-Digits</div>
+    </div>
+  </div>
+  <div class="dropdown" style="float:right;">
+    <button class="dropbtn"><i class="fas fa-times"></i></button>
+    <div class="dropdown-content" id="puzzle-items">
+      <div ><i class="fas fa-times"></i> Basic</div>
+      <div ><i class="fas fa-times"></i> Factors in 20</div>
+      <div ><i class="fas fa-times"></i> 2-Digit</div>
+    </div>
+  </div>
+  <div class="dropdown" style="float:right;">
+    <button class="dropbtn"><i class="fas fa-divide"></i></button>
+    <div class="dropdown-content" id="puzzle-items">
+      <div ><i class="fas fa-divide"></i> Level 1</div>
+      <div ><i class="fas fa-divide"></i> Level 2</div>
+      <div ><i class="fas fa-divide"></i> Level 3</div>
+    </div>
+  </div>
+  <div class="dropdown" style="float:right;">
+    <button class="dropbtn"><i class="fas fa-pizza-slice"></i></button>
+    <div class="dropdown-content" id="puzzle-items">
+      <div ><i class="fas fa-pizza-slice"></i> Basic <i class="fas fa-plus"></i></div>
+      <div ><i class="fas fa-pizza-slice"></i> Advanced <i class="fas fa-plus"></i></div>
+      <div ><i class="fas fa-pizza-slice"></i> Basic <i class="fas fa-minus"></i></div>
+      <div ><i class="fas fa-pizza-slice"></i> Advanced <i class="fas fa-minus"></i></div>
+      <div ><i class="fas fa-pizza-slice"></i> Basic <i class="fas fa-times"></i></div>
+      <div ><i class="fas fa-pizza-slice"></i> Basic <i class="fas fa-divide"></i></div>
+    </div>
+  </div>
+  <div id="coins">
+    <div id="pig" class="coin">🐷</div>
+    <div id="dog" class="coin">🐶</div>
+    <div id="rooster" class="coin">🐔</div>
+    <div id="monkey" class="coin">🐵</div>
+    <div id="goat" class="coin">🐐</div>
+    <div id="horse" class="coin">🐴</div>
+    <div id="snake" class="coin">🐍</div>
+    <div id="dragon" class="coin">🐲</div>
+    <div id="rabbit" class="coin">🐰</div>
+    <div id="tiger" class="coin">🐯</div>
+    <div id="ox" class="coin">🐮</div>
+    <div id="rat" class="coin">🐭</div>
+  </div>
+
+  <div id="scores">
+    <div id="score" class="score"> <span id="correct-counter">0</span> 💰</div>
+    <div id="poo" class="score"><span id="wrong-counter">0</span> 💩</div>
+  </div>
+  <div id="question-area">
+    <span id="question-title"></span><span id="input-echo"></span>
+  </div>
+  <div id="question-description">
+    <!-- <p>This is some text.</p> -->
+  </div>
+  <div id="keyboard">
+    <div id="number-pad">
+      <button type="button" class="btn btn-warning keypad" id="1" onclick="App.number_click(this.id)">1</button>
+      <button type="button" class="btn btn-warning keypad" id="2" onclick="App.number_click(this.id)">2</button>
+      <button type="button" class="btn btn-warning keypad" id="3" onclick="App.number_click(this.id)">3</button>
+      <button type="button" class="btn btn-warning keypad" id="4" onclick="App.number_click(this.id)">4</button>
+      <button type="button" class="btn btn-warning keypad" id="5" onclick="App.number_click(this.id)">5</button>
+      <button type="button" class="btn btn-warning keypad" id="6" onclick="App.number_click(this.id)">6</button>
+      <button type="button" class="btn btn-warning keypad" id="7" onclick="App.number_click(this.id)">7</button>
+      <button type="button" class="btn btn-warning keypad" id="8" onclick="App.number_click(this.id)">8</button>
+      <button type="button" class="btn btn-warning keypad" id="9" onclick="App.number_click(this.id)">9</button>
+      <button type="button" class="btn btn-warning keypad" id="0" onclick="App.number_click(this.id)">0</button>
+    </div>
+    <div id="symbol-pad">
+      <button type="button" class="btn btn-warning keypad" id="/" onclick="App.number_click(this.id)">/</button>
+      <button type="button" class="btn btn-warning keypad" id="." onclick="App.number_click(this.id)">.</button>
+      <button type="button" class="btn btn-warning keypad" id="c" onclick="App.number_click(this.id)"><i class="fas fa-eraser"></i></button>
+      <button type="button" class="btn btn-warning keypad" id="r" onclick="App.number_click(this.id)"><i class="fas fa-backspace"></i></button>
+      <button type="button" class="btn btn-warning keypad" id="=" onclick="App.number_click(this.id)"><i class="fas fa-check"></i></button>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="js/puzzles.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
