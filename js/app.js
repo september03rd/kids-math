@@ -29,6 +29,14 @@ App = {
     App.inputEcho = '';
     App.buildPuzzle();
   },
+  option_selected: function(id) {
+    // console.log(id);
+    res = id.split(".");
+    App.puzzleCategory = parseInt(res[0]);
+    App.puzzleIndex = parseInt(res[1]);
+    App.currentPuzzle = puzzleList[App.puzzleCategory].puzzles[App.puzzleIndex].f;
+    App.buildPuzzle();
+  },
   number_click: function(id) {
     console.log(id);
     if (id === 'c') {
