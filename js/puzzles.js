@@ -7,7 +7,7 @@ Puzzles = {
     result = left + 1;
     return {
       title: ''+left+' + 1'+' =  ',
-      result: result
+      result: result,
     }
   },
   add2: function(){ //addition in 10;
@@ -15,7 +15,7 @@ Puzzles = {
     result = left + 2;
     return {
       title: ''+left+' + 2'+' = ',
-      result: result
+      result: result,
     };
   },
   add3: function(){ //addition in 10;
@@ -141,7 +141,8 @@ Puzzles = {
       sum = numerator1+numerator2;
         return {
           title: ''+ numerator1 +'/'+denominator + ' + ' + numerator2 +'/'+denominator+ ' = ',
-          result: sum == denominator ? 1 : ''+sum+'/'+denominator
+          result: sum+'/'+denominator,
+          check: fractionCheck
         };
     },
     fractionAdd1: function(){ //addition in 10;
@@ -149,10 +150,10 @@ Puzzles = {
       numerator1 = Puzzles.randomizer(1, denominator-1);
       numerator2 = Puzzles.randomizer(1, denominator-1);
       sum = numerator1+numerator2;
-      g = gcd(sum, denominator);
         return {
           title: ''+ numerator1 +'/'+denominator + ' + ' + numerator2 +'/'+denominator+ ' = ',
-          result: denominator/g == 1? ''+denominator/g :''+sum/g+'/'+denominator/g
+          result: sum+'/'+denominator,
+          check: fractionCheck
         };
     },
     fractionAdd2: function(){ //addition in 10;
@@ -170,10 +171,10 @@ Puzzles = {
 
       denominator = denominator1*denominator2;
       sum = numerator1*denominator2 + denominator1*numerator2;
-      g = gcd(sum, denominator);
         return {
           title: ''+ numerator1 +'/'+denominator1 + ' + ' + numerator2 +'/'+denominator2+ ' = ',
-          result: denominator/g == 1? ''+denominator/g :''+sum/g+'/'+denominator/g
+          result: sum+'/'+denominator,
+          check: fractionCheck
         };
     },
     fractionSubtraction: function(){ //addition in 10;
@@ -183,7 +184,8 @@ Puzzles = {
       sum = numerator1+numerator2;
         return {
           title: ''+ sum +'/'+denominator + ' - ' + numerator2 +'/'+denominator+ ' = ',
-          result: ''+numerator1+'/'+denominator
+          result: numerator1+'/'+denominator,
+          check: fractionCheck
         };
     },
     fractionSubtraction1: function(){ //addition in 10;
@@ -206,11 +208,10 @@ Puzzles = {
         s = -s;
         e = ''+ numerator2+'/'+ denominator2 + ' - '+ numerator1 + '/'+ denominator1+ ' = ';
       }
-      g = gcd(s, denominator2*denominator1);
-
         return {
           title: e,
-          result: ''+s/g + '/' + denominator2*denominator1/g
+          result: s + '/' + denominator2*denominator1,
+          check: fractionCheck
         };
     },
     fractionM: function(){ //addition in 10;
@@ -228,10 +229,10 @@ Puzzles = {
 
       denominator = denominator1*denominator2;
       sum = numerator1*numerator2;
-      g = gcd(sum, denominator);
         return {
           title: ''+ numerator1 +'/'+denominator1 + ' X ' + numerator2 +'/'+denominator2+ ' = ',
-          result: denominator/g == 1? ''+denominator/g :''+sum/g+'/'+denominator/g
+          result: sum+'/'+denominator,
+          check: fractionCheck
         };
     },
     fractionD: function(){ //addition in 10;
@@ -249,10 +250,10 @@ Puzzles = {
 
       denominator = denominator1*numerator2;
       sum = numerator1*denominator2;
-      g = gcd(sum, denominator);
         return {
           title: ''+ numerator1 +'/'+denominator1 + ' \u00F7 ' + numerator2 +'/'+denominator2+ ' = ',
-          result: denominator/g == 1? ''+denominator/g :''+sum/g+'/'+denominator/g
+          result: sum+'/'+denominator,
+          check: fractionCheck
         };
     }
 }
@@ -370,6 +371,18 @@ puzzleList = [
       }
 
 ];
+
+function fractionCheck(a, b) {
+  res = a.split('/');
+  n1 = parseInt(res[0]);
+  d1 = parseInt(res[1]);
+
+  res1 = b.split('/');
+  n2 = parseInt(res1[0]);
+  d2 = res1.length == 1 ? 1: parseInt(res1[1]);
+
+  return d1*n2 == d2*n1;
+}
 
 function gcd(a, b) {
     if (a % b === 0) {

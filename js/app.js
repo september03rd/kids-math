@@ -7,6 +7,7 @@ App = {
   correctCounter: 0,
   wrongCounter: 0,
   currentPuzzle: null,
+  check: defaultCheck,
   init: function () {
     console.log("App initialized...");
     App.currentPuzzle = puzzleList[App.puzzleCategory].puzzles[App.puzzleIndex].f;
@@ -16,9 +17,9 @@ App = {
     puzzle = App.currentPuzzle();
     $('#question-title').text(puzzle.title);
     App.puzzleResult = puzzle.result;
+    App.check = puzzle.check ? puzzle.check : defaultCheck;
   },
   triggerResult: function(result) {
-    console.log(App.puzzleResult);
     if(result) {
       App.correctCounter += 1;
       $('#correct-counter').text(App.correctCounter)
@@ -38,17 +39,12 @@ App = {
     App.buildPuzzle();
   },
   number_click: function(id) {
-    console.log(id);
     if (id === 'c') {
       App.inputEcho = '';
     } else if (id === 'r') {
       App.inputEcho = App.inputEcho.slice(0, -1);
     } else if (id === '='){
-      console.log('---');
-      console.log(App.puzzleResult);
-      console.log(App.inputEcho)
-      console.log('===');
-      flag = ''+App.puzzleResult === App.inputEcho;
+      flag = App.check(''+App.puzzleResult,App.inputEcho);
       App.triggerResult(flag);
     } else {
       App.inputEcho += id;
@@ -57,10 +53,10 @@ App = {
   }
 }
 
+function defaultCheck(a,b){return a === b;}
 
 $(function() {
   $(window).ready(function () {
        App.init();
-       // console.log(puzzleList[4].puzzles[3].f());
   });
 });
