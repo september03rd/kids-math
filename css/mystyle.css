@@ -5,18 +5,17 @@ html, body {
   height: 98%;
 
 }
-.container {
+.board-container {
   background-color: #4B8A08;
-  width: auto;
+  margin-left: 2%;
+  width: 96%;
   height: 100%;
 }
 .coin {
   display: inline-block;
   font-size: 3em;
 }
-#pig {
-  display: none;
-}
+
 .score {
   display: inline-block;
   font-size: 2em;
