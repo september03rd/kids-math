@@ -16,9 +16,9 @@ html, body {
   font-size: 3em;
 }
 
-.score {
-  display: inline-block;
-  font-size: 2em;
+#score {
+  /* display: inline-block; */
+  font-size: 3em;
   font-family: "Fredoka One";
 }
 
