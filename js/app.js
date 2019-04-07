@@ -8,17 +8,20 @@ App = {
   wrongCounter: 0,
   currentPuzzle: null,
   check: defaultCheck,
+
   init: function () {
     console.log("App initialized...");
     App.currentPuzzle = puzzleList[App.puzzleCategory].puzzles[App.puzzleIndex].f;
     App.buildPuzzle();
   },
+
   buildPuzzle: function(){
     puzzle = App.currentPuzzle();
     $('#question-title').text(puzzle.title);
     App.puzzleResult = puzzle.result;
     App.check = puzzle.check ? puzzle.check : defaultCheck;
   },
+
   triggerResult: function(result) {
     if(result) {
       App.correctCounter += 1;
@@ -28,16 +31,19 @@ App = {
       $('#wrong-counter').text(App.wrongCounter)
     }
     App.inputEcho = '';
+    scoreText = Score.scoreText(App.correctCounter);
+    $('#score').text(scoreText);
     App.buildPuzzle();
   },
+
   option_selected: function(id) {
-    // console.log(id);
     res = id.split(".");
     App.puzzleCategory = parseInt(res[0]);
     App.puzzleIndex = parseInt(res[1]);
     App.currentPuzzle = puzzleList[App.puzzleCategory].puzzles[App.puzzleIndex].f;
     App.buildPuzzle();
   },
+
   number_click: function(id) {
     if (id === 'c') {
       App.inputEcho = '';
@@ -58,5 +64,7 @@ function defaultCheck(a,b){return a === b;}
 $(function() {
   $(window).ready(function () {
        App.init();
+       // console.log('🐷'.length);
+       // console.log(Score.scoreText(100));
   });
 });
