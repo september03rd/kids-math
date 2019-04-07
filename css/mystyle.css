@@ -11,7 +11,7 @@ html, body {
   width: 96%;
   height: 100%;
 }
-.coin {
+#coin {
   display: inline-block;
   font-size: 3em;
 }
