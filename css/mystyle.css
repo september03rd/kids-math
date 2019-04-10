@@ -2,7 +2,7 @@
 html, body {
   font-family: Georgia, "Times New Roman",Times, serif;
   color: white;
-  height: 98%;
+  height: 100%;
 
 }
 .board-container {
@@ -10,6 +10,28 @@ html, body {
   margin-left: 2%;
   width: 96%;
   height: 100%;
+}
+input {
+    vertical-align: baseline;
+}
+
+#question-description {
+  margin-top: 5%;
+  font-size: 2em;
+  font-family: "Fredoka One";
+}
+#answers {
+  margin-top: 10%;
+  font-size: 2em;
+  font-family: "Fredoka One";
+  width: 100%;
+}
+.answer {
+  margin-right: 2%;
+}
+
+#predefined-puzzle {
+  display: none;
 }
 #coin {
   display: inline-block;
@@ -26,12 +48,12 @@ html, body {
   font-size: 6em;
   font-family: "Fredoka One";
 }
-#question-description {
-  /* display:none */
-  height:30%;
-}
 #input-echo {
   margin-left: 0.5em;
+}
+#keyboard {
+  position: absolute;
+  bottom: 2%;
 }
 .keypad {
   width: 9%;

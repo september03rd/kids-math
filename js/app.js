@@ -8,11 +8,20 @@ App = {
   wrongCounter: 0,
   currentPuzzle: null,
   check: defaultCheck,
+  costomizedPuzzle: null,
 
   init: function () {
     console.log("App initialized...");
     App.currentPuzzle = puzzleList[App.puzzleCategory].puzzles[App.puzzleIndex].f;
+    App.costomizedPuzzle = PuzzleService.getPuzzle('a');
     App.buildPuzzle();
+    $("#answerForm").submit(function(event){
+      event.preventDefault();
+      index = $("input[type='radio'][name='answer']:checked").val();
+      console.log(index);
+      result = App.costomizedPuzzle.check(index);
+      console.log(result);
+    });
   },
 
   buildPuzzle: function(){
@@ -20,6 +29,11 @@ App = {
     $('#question-title').text(puzzle.title);
     App.puzzleResult = puzzle.result;
     App.check = puzzle.check ? puzzle.check : defaultCheck;
+  },
+
+  buildCusomizedPuzzle: function() {
+
+
   },
 
   triggerResult: function(result) {
@@ -38,10 +52,23 @@ App = {
 
   option_selected: function(id) {
     res = id.split(".");
-    App.puzzleCategory = parseInt(res[0]);
-    App.puzzleIndex = parseInt(res[1]);
-    App.currentPuzzle = puzzleList[App.puzzleCategory].puzzles[App.puzzleIndex].f;
-    App.buildPuzzle();
+    console.log(res);
+    if (res[0] != 'customized') {
+      $('#customized-puzzle').hide();
+      $('#predefined-puzzle').show();
+      App.puzzleCategory = parseInt(res[0]);
+      App.puzzleIndex = parseInt(res[1]);
+      App.currentPuzzle = puzzleList[App.puzzleCategory].puzzles[App.puzzleIndex].f;
+      App.buildPuzzle();
+    } else {
+      $('#customized-puzzle').show();
+      $('#predefined-puzzle').hide();
+      $('#question-description').text(App.costomizedPuzzle.description);
+      var i;
+      for(i=0;i<4;i++){
+        $('#label'+i).text(App.costomizedPuzzle.answers[i].option);
+      }
+    }
   },
 
   number_click: function(id) {
