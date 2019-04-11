@@ -19,6 +19,8 @@ App = {
       event.preventDefault();
       index = $("input[type='radio'][name='answer']:checked").val();
       result = App.costomizedPuzzle.check(index);
+      App.triggerResult(result);
+      App.buildCusomizedPuzzle();
     });
   },
 
@@ -30,8 +32,12 @@ App = {
   },
 
   buildCusomizedPuzzle: function() {
-
-
+    $('#question-description').text(App.costomizedPuzzle.description);
+    var i;
+    for(i=0;i<4;i++){
+      $('#label'+i).text(App.costomizedPuzzle.answers[i].option);
+      $('#answer'+i).prop('checked', false);
+    }
   },
 
   triggerResult: function(result) {
@@ -45,7 +51,6 @@ App = {
     App.inputEcho = '';
     scoreText = Score.scoreText(App.correctCounter);
     $('#score').text(scoreText);
-    App.buildPuzzle();
   },
 
   option_selected: function(id) {
@@ -60,11 +65,8 @@ App = {
     } else {
       $('#customized-puzzle').show();
       $('#predefined-puzzle').hide();
-      $('#question-description').text(App.costomizedPuzzle.description);
-      var i;
-      for(i=0;i<4;i++){
-        $('#label'+i).text(App.costomizedPuzzle.answers[i].option);
-      }
+      App.buildCusomizedPuzzle();
+
     }
   },
 
@@ -78,6 +80,7 @@ App = {
       score = App.check(App.inputEcho);
       console.log(score);
       App.triggerResult(score);
+      App.buildPuzzle();
     } else {
       App.inputEcho += id;
     }
@@ -85,7 +88,6 @@ App = {
   }
 }
 
-function defaultCheck(a,b){return a === b;}
 
 $(function() {
   $(window).ready(function () {
