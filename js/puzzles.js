@@ -421,110 +421,115 @@ Puzzles = {
 puzzleList = [
   {
     category: 'Addition',
+    symbol: '<i class="fas fa-plus"></i>',
     puzzles: [
         {
-          title: 'Addition with 1',
+          title: ' 1',
           f: Puzzles.add1
         },
         {
-          title: 'Addition with 2',
+          title: ' 2',
           f: Puzzles.add2
         },
         {
-          title: 'Addition with 3',
+          title: ' 3',
           f: Puzzles.add3
         },
         {
-          title: 'Basic Addition',
+          title: ' Basic',
           f: Puzzles.addIn10
         },
         {
-          title: 'Addition with Carry',
+          title: ' Carry',
           f: Puzzles.addOver10
         },
         {
-          title: '2 Digits Addition',
+          title: ' 2-Digits',
           f: Puzzles.addIn100
         }
     ]
   },
     {
       category: 'Subtraction',
+      symbol: '<i class="fas fa-minus"></i>',
       puzzles: [
         {
-          title: 'Basic Subtraction',
+          title: ' Basic',
           f: Puzzles.subtract
         },
         {
-          title: 'Subtraction with Trade',
+          title: ' Trade',
           f: Puzzles.subtract1
         },
         {
-          title: '2 Digits Subtraction',
+          title: ' 2-Digits',
           f: Puzzles.subtract2
         }
       ]
     },
     {
       category: 'Multiplication',
+      symbol: '<i class="fas fa-times"></i>',
       puzzles:
       [
         {
-          title: 'Basic Multiplication',
+          title: ' Basic',
           f: Puzzles.multiply
         },
         {
-          title: 'Multiplication within 20',
+          title: ' Factors in 20',
           f: Puzzles.multiply1
         },
         {
-          title: '2 Digits Multiplication',
+          title: ' 2-Digits',
           f: Puzzles.multiply2
         }
       ]
     },
       {
         category: 'Division',
+        symbol: '<i class="fas fa-divide"></i>',
         puzzles:
         [
           {
-            title: 'Division Level 1',
+            title: ' Level 1',
             f: Puzzles.division
           },
           {
-            title: 'Division Level 2',
+            title: ' Level 2',
             f: Puzzles.division1
           },
           {
-            title: 'Division Level 3',
+            title: ' Level 3',
             f: Puzzles.division2
           },
         ]
       }, {
         category: 'Fraction',
+        symbol: '<i class="fas fa-pizza-slice"></i>',
         puzzles: [
           {
-            title: 'Basic Fraction Addition',
+            title: ' Basic <i class="fas fa-plus"></i>',
             f: Puzzles.fractionAdd
           },
           {
-            title: 'Fraction Addition Level 2',
+            title: ' Level 2 <i class="fas fa-plus"></i>',
             f: Puzzles.fractionAdd2
           },
           {
-            title: 'Basic Fraction Subtraction',
+            title: ' Basic <i class="fas fa-minus"></i>',
             f: Puzzles.fractionSubtraction
           },
           {
-            title: 'Advanced Fraction Subtraction',
+            title: ' Advanced <i class="fas fa-minus"></i>',
             f: Puzzles.fractionSubtraction1
           },
           {
-            title: 'Fraction Multiplication',
+            title: ' <i class="fas fa-times"></i>',
             f: Puzzles.fractionM
           },
           {
-            title: 'Fraction Division',
+            title: ' <i class="fas fa-divide"></i>',
             f: Puzzles.fractionD
           }
         ]

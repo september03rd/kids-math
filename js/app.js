@@ -114,6 +114,27 @@ App = {
     str += '<div><button type="submit">Confirm</button></div>';
 
     $('#answerForm').html(str);
+  },
+  build_puzzle_options: function() {
+    str = '<nav class="navbar navbar-expand-lg navbar-light bg-light"><div class="collapse navbar-collapse"><ul class="navbar-nav mr-auto">';
+    options=""
+    types = puzzleList.length;
+    var i;
+    var j;
+
+    for(i = 0; i < types; i++) {
+      puzzle = puzzleList[i];
+      options += '<li class="nav-item dropdown"><a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' + puzzle.symbol + '</a><div class="dropdown-menu" aria-labelledby="navbarDropdown">';
+      items = puzzle.puzzles.length;
+      for(j = 0; j < items; j++) {
+        options += '<a class="dropdown-item" href="#" id="'+i+'.'+j+'" onclick="App.option_selected(this.id);">'+ puzzle.symbol +  puzzle.puzzles[j].title+'</a>';
+      }
+      options += '</div></li>';
+    }
+    str += options;
+
+    str += '</ul></div></nav>';
+    $('#puzzle-options').html(str);
   }
 }
 
@@ -126,5 +147,6 @@ $(function() {
        App.init();
        App.build_keyboard();
        App.build_answer_form();
+       App.build_puzzle_options();
   });
 });

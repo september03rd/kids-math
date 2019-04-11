@@ -14,62 +14,20 @@
 <body>
 
   <div class="board-container">
-    <div class="dropdown" style="float:right;">
-      <button class="dropbtn"><i class="fas fa-plus"></i></button>
-      <div class="dropdown-content" id="puzzle-items">
-        <div id="0.0" onclick="App.option_selected(this.id)"><i class="fas fa-plus"></i> 1</div>
-        <div id="0.1" onclick="App.option_selected(this.id)"><i class="fas fa-plus"></i> 2</div>
-        <div id="0.2" onclick="App.option_selected(this.id)"><i class="fas fa-plus"></i> 3</div>
-        <div id="0.3" onclick="App.option_selected(this.id)"><i class="fas fa-plus"></i> Basic</div>
-        <div id="0.4" onclick="App.option_selected(this.id)"><i class="fas fa-plus"></i> Carry</div>
-        <div id="0.5" onclick="App.option_selected(this.id)"><i class="fas fa-plus"></i> 2-Digits</div>
-      </div>
-    </div>
-    <div class="dropdown" style="float:right;">
-      <button class="dropbtn"><i class="fas fa-minus"></i></button>
-      <div class="dropdown-content" id="puzzle-items">
-        <div id="1.0" onclick="App.option_selected(this.id)"><i class="fas fa-minus"></i> Basic</div>
-        <div id="1.1" onclick="App.option_selected(this.id)"><i class="fas fa-minus"></i> Trading</div>
-        <div id="1.2" onclick="App.option_selected(this.id)"><i class="fas fa-minus"></i> 2-Digits</div>
-      </div>
-    </div>
-    <div class="dropdown" style="float:right;">
-      <button class="dropbtn"><i class="fas fa-times"></i></button>
-      <div class="dropdown-content" id="puzzle-items">
-        <div id="2.0" onclick="App.option_selected(this.id)"><i class="fas fa-times"></i> Basic</div>
-        <div id="2.1" onclick="App.option_selected(this.id)"><i class="fas fa-times"></i> Factors in 20</div>
-        <div id="2.2" onclick="App.option_selected(this.id)"><i class="fas fa-times"></i> 2-Digit</div>
-      </div>
-    </div>
-    <div class="dropdown" style="float:right;">
-      <button class="dropbtn"><i class="fas fa-divide"></i></button>
-      <div class="dropdown-content" id="puzzle-items">
-        <div id="3.0" onclick="App.option_selected(this.id)"><i class="fas fa-divide"></i> Level 1</div>
-        <div id="3.1" onclick="App.option_selected(this.id)"><i class="fas fa-divide"></i> Level 2</div>
-        <div id="3.2" onclick="App.option_selected(this.id)"><i class="fas fa-divide"></i> Level 3</div>
-      </div>
-    </div>
-    <div class="dropdown" style="float:right;">
-      <button class="dropbtn"><i class="fas fa-pizza-slice"></i></button>
-      <div class="dropdown-content" id="puzzle-items">
-        <div id="4.0" onclick="App.option_selected(this.id)"><i class="fas fa-pizza-slice"></i> Basic <i class="fas fa-plus"></i></div>
-        <div id="4.1" onclick="App.option_selected(this.id)"><i class="fas fa-pizza-slice"></i> Advanced <i class="fas fa-plus"></i></div>
-        <div id="4.2" onclick="App.option_selected(this.id)"><i class="fas fa-pizza-slice"></i> Basic <i class="fas fa-minus"></i></div>
-        <div id="4.3" onclick="App.option_selected(this.id)"><i class="fas fa-pizza-slice"></i> Advanced <i class="fas fa-minus"></i></div>
-        <div id="4.4" onclick="App.option_selected(this.id)"><i class="fas fa-pizza-slice"></i> Basic <i class="fas fa-times"></i></div>
-        <div id="4.5" onclick="App.option_selected(this.id)"><i class="fas fa-pizza-slice"></i> Basic <i class="fas fa-divide"></i></div>
-      </div>
-    </div>
-    <div class="dropdown" style="float:right;">
-      <button class="dropbtn"><i class="fas fa-divide"></i></button>
-      <div class="dropdown-content" id="puzzle-items">
-        <div id="customized.0" onclick="App.option_selected(this.id)"><i class="fas fa-divide"></i> Level 1</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <div id="score">0 💰</div>
+        </div>
+        <div class="col-sm-4">
+          <div class="row justify-content-end" id="puzzle-options">
+
+          </div>
+        </div>
       </div>
     </div>
 
-    <div id="coins" class="container">
-      <div id="score">💰</div>
-    </div>
+
     <div id="customized-puzzle" class="container">
       <div id="question-description">笼子里一共有8只动物。数了一下，有8个头，20只脚。问笼子里有几只鸡？</div>
       <div id="answers">
