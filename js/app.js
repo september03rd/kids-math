@@ -7,7 +7,7 @@ App = {
   correctCounter: 0,
   wrongCounter: 0,
   currentPuzzle: null,
-  check: defaultCheck,
+  check: null,
   costomizedPuzzle: null,
 
   init: function () {
@@ -18,9 +18,7 @@ App = {
     $("#answerForm").submit(function(event){
       event.preventDefault();
       index = $("input[type='radio'][name='answer']:checked").val();
-      console.log(index);
       result = App.costomizedPuzzle.check(index);
-      console.log(result);
     });
   },
 
@@ -28,7 +26,7 @@ App = {
     puzzle = App.currentPuzzle();
     $('#question-title').text(puzzle.title);
     App.puzzleResult = puzzle.result;
-    App.check = puzzle.check ? puzzle.check : defaultCheck;
+    App.check = puzzle.check;
   },
 
   buildCusomizedPuzzle: function() {
@@ -38,10 +36,10 @@ App = {
 
   triggerResult: function(result) {
     if(result) {
-      App.correctCounter += 1;
+      App.correctCounter += result;
       $('#correct-counter').text(App.correctCounter)
     } else {
-      App.wrongCounter += 1;
+      App.wrongCounter += result;
       $('#wrong-counter').text(App.wrongCounter)
     }
     App.inputEcho = '';
@@ -52,7 +50,6 @@ App = {
 
   option_selected: function(id) {
     res = id.split(".");
-    console.log(res);
     if (res[0] != 'customized') {
       $('#customized-puzzle').hide();
       $('#predefined-puzzle').show();
@@ -77,8 +74,10 @@ App = {
     } else if (id === 'r') {
       App.inputEcho = App.inputEcho.slice(0, -1);
     } else if (id === '='){
-      flag = App.check(''+App.puzzleResult,App.inputEcho);
-      App.triggerResult(flag);
+      console.log(App.inputEcho);
+      score = App.check(App.inputEcho);
+      console.log(score);
+      App.triggerResult(score);
     } else {
       App.inputEcho += id;
     }
@@ -91,7 +90,5 @@ function defaultCheck(a,b){return a === b;}
 $(function() {
   $(window).ready(function () {
        App.init();
-       // console.log('🐷'.length);
-       // console.log(Score.scoreText(100));
   });
 });

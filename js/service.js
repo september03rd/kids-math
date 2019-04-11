@@ -21,10 +21,10 @@ PuzzleService = {
           'is_answer': false,
         }
       ],
-      'coin': '15',
+      'coin': 15,
       check: function(index) {
         if (this.answers[parseInt(index)].is_answer) {
-          return parseInt(this.coin);
+          return this.coin;
         } else {
           return 0;
         }

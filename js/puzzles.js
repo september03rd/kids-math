@@ -5,133 +5,238 @@ Puzzles = {
   add1: function() { //addition in 10;
     left = Puzzles.randomizer(1,8);
     result = left + 1;
+    coin = 1;
     return {
       title: ''+left+' + 1'+' =  ',
-      result: result,
+      check: function(r) {
+        if(parseInt(r) == result) {
+          return coin;
+        } else {
+          return 0;
+        }
+      }
     }
   },
   add2: function(){ //addition in 10;
     left = Puzzles.randomizer(1,7);
     result = left + 2;
+    coin = 1;
     return {
       title: ''+left+' + 2'+' = ',
-      result: result,
+      check: function(r) {
+        if(parseInt(r) == result) {
+          return coin;
+        } else {
+          return 0;
+        }
+      }
     };
   },
   add3: function(){ //addition in 10;
     left = Puzzles.randomizer(1,6);
     result = left + 3;
+    coin = 1;
     return {
       title: ''+left+' + 3'+ ' = ',
-      result: result
+      check: function(r) {
+        if(parseInt(r) == result) {
+          return coin;
+        } else {
+          return 0;
+        }
+      }
     };
   },
   addIn10: function(){ //addition in 10;
     left = Puzzles.randomizer(1,8);
     right = Puzzles.randomizer(1,9-left);
     result = left + right;
+    coin = 1;
     return {
       title: ''+left+' + '+right+' = ',
-      result: result
+      check: function(r) {
+        if(parseInt(r) == result) {
+          return coin;
+        } else {
+          return 0;
+        }
+      }
     };
   },
   addOver10:  function(){ //addition in 10;
     left = Puzzles.randomizer(2,9);
     right = Puzzles.randomizer(10-left, 9);
     result = left + right;
+    coin = 2;
     return {
       title: ''+left+' + '+right+' = ',
-      result: result
+      check: function(r) {
+        if(parseInt(r) == result) {
+          return coin;
+        } else {
+          return 0;
+        }
+      }
     };
   },
   addIn100: function(){ //addition in 10;
     left = Puzzles.randomizer(10,88);
     right = Puzzles.randomizer(10,90-left);
     result = left + right;
+    coin = 5;
     return {
       title: ''+left+' + '+right+' = ',
-      result: result
+      check: function(r) {
+        if(parseInt(r) == result) {
+          return coin;
+        } else {
+          return 0;
+        }
+      }
     };
   },
   subtract: function(){ //addition in 10;
     left = Puzzles.randomizer(2,9);
     right = Puzzles.randomizer(1, left);
     result = left - right;
+    coin = 2;
     return {
       title: ''+left+' - '+right+' = ',
-      result: result
+      check: function(r) {
+        if(parseInt(r) == result) {
+          return coin;
+        } else {
+          return 0;
+        }
+      }
     };
   },
   subtract1: function(){ //addition in 10;
     left = Puzzles.randomizer(2,9);
     right = Puzzles.randomizer(10-left, 9);
     result = left + right;
+    coin = 3;
     return {
       title: ''+result+' - '+left+' = ',
-      result: right
+      check: function(r) {
+        if(parseInt(r) == right) {
+          return coin;
+        } else {
+          return 0;
+        }
+      }
     };
   },
   subtract2: function(){ //addition in 10;
     left = Puzzles.randomizer(11,99);
     right = Puzzles.randomizer(10, left);
     result = left - right;
+    coin = 5;
     return {
       title: ''+left+' - '+right+' = ',
-      result: result
+      check: function(r) {
+        if(parseInt(r) == result) {
+          return coin;
+        } else {
+          return 0;
+        }
+      }
     };
   },
   multiply: function(){ //addition in 10;
       left = Puzzles.randomizer(1,9);
       right = Puzzles.randomizer(1, 9);
       result = left * right;
+      coin = 2;
       return {
         title: ''+left+' X '+right+' = ',
-        result: result
+        check: function(r) {
+          if(parseInt(r) == result) {
+            return coin;
+          } else {
+            return 0;
+          }
+        }
       };
     },
     multiply1: function(){ //addition in 10;
         left = Puzzles.randomizer(11,19);
         right = Puzzles.randomizer(11, 19);
         result = left * right;
+        coin = 5;
         return {
           title: ''+left+' X '+right+' = ',
-          result: result
+          check: function(r) {
+            if(parseInt(r) == result) {
+              return coin;
+            } else {
+              return 0;
+            }
+          }
         };
     },
     multiply2: function(){ //addition in 10;
         left = Puzzles.randomizer(11,99);
         right = Puzzles.randomizer(11, 99);
         result = left * right;
+        coin = 10;
         return {
           title: ''+left+' X '+right+' = ',
-          result: result
+          check: function(r) {
+            if(parseInt(r) == result) {
+              return coin;
+            } else {
+              return 0;
+            }
+          }
         };
     },
     division: function(){ //addition in 10;
       left = Puzzles.randomizer(1,9);
       right = Puzzles.randomizer(1, 9);
       result = left * right;
+      coin = 2;
         return {
           title: ''+result+' \u00F7 '+right+' = ',
-          result: left
+          check: function(r) {
+            if(parseInt(r) == left) {
+              return coin;
+            } else {
+              return 0;
+            }
+          }
         };
     },
     division1: function(){ //addition in 10;
       left = Puzzles.randomizer(11,19);
       right = Puzzles.randomizer(11, 19);
       result = left * right;
+      coin = 10;
         return {
           title: ''+result+' \u00F7 '+right+' = ',
-          result: left
+          check: function(r) {
+            if(parseInt(r) == left) {
+              return coin;
+            } else {
+              return 0;
+            }
+          }
         };
     },
     division2: function(){ //addition in 10;
       left = Puzzles.randomizer(11,99);
       right = Puzzles.randomizer(11, 99);
       result = left * right;
+      coin = 15;
         return {
           title: ''+result+' \u00F7 '+right+' = ',
-          result: left
+          check: function(r) {
+            if(parseInt(r) == left) {
+              return coin;
+            } else {
+              return 0;
+            }
+          }
         };
     },
     fractionAdd: function(){ //addition in 10;
@@ -139,10 +244,18 @@ Puzzles = {
       numerator1 = Puzzles.randomizer(1, denominator-1);
       numerator2 = Puzzles.randomizer(1, denominator-numerator1);
       sum = numerator1+numerator2;
+      coin = 2;
+      result = sum+'/'+denominator;
         return {
           title: ''+ numerator1 +'/'+denominator + ' + ' + numerator2 +'/'+denominator+ ' = ',
-          result: sum+'/'+denominator,
-          check: fractionCheck
+          check: function(r) {
+            console.log(result);
+            if(fractionCheck(r, result)) {
+              return coin;
+            } else {
+              return 0;
+            }
+          }
         };
     },
     fractionAdd1: function(){ //addition in 10;
@@ -150,10 +263,17 @@ Puzzles = {
       numerator1 = Puzzles.randomizer(1, denominator-1);
       numerator2 = Puzzles.randomizer(1, denominator-1);
       sum = numerator1+numerator2;
+      result= sum+'/'+denominator;
+      coin = 2;
         return {
           title: ''+ numerator1 +'/'+denominator + ' + ' + numerator2 +'/'+denominator+ ' = ',
-          result: sum+'/'+denominator,
-          check: fractionCheck
+          check: function(r) {
+            if(fractionCheck(r, result)) {
+              return coin;
+            } else {
+              return 0;
+            }
+          }
         };
     },
     fractionAdd2: function(){ //addition in 10;
@@ -171,10 +291,18 @@ Puzzles = {
 
       denominator = denominator1*denominator2;
       sum = numerator1*denominator2 + denominator1*numerator2;
+      result= sum+'/'+denominator;
+      coin = 5;
+
         return {
           title: ''+ numerator1 +'/'+denominator1 + ' + ' + numerator2 +'/'+denominator2+ ' = ',
-          result: sum+'/'+denominator,
-          check: fractionCheck
+          check: function(r) {
+            if(fractionCheck(r, result)) {
+              return coin;
+            } else {
+              return 0;
+            }
+          }
         };
     },
     fractionSubtraction: function(){ //addition in 10;
@@ -182,10 +310,20 @@ Puzzles = {
       numerator1 = Puzzles.randomizer(1, denominator-1);
       numerator2 = Puzzles.randomizer(1, denominator-numerator1);
       sum = numerator1+numerator2;
+      result = numerator1+'/'+denominator;
+      coin = 5;
+
         return {
           title: ''+ sum +'/'+denominator + ' - ' + numerator2 +'/'+denominator+ ' = ',
-          result: numerator1+'/'+denominator,
-          check: fractionCheck
+          check: function(r) {
+            console.log(r);
+            console.log(result);
+            if(fractionCheck(r, result)) {
+              return coin;
+            } else {
+              return 0;
+            }
+          }
         };
     },
     fractionSubtraction1: function(){ //addition in 10;
@@ -208,10 +346,17 @@ Puzzles = {
         s = -s;
         e = ''+ numerator2+'/'+ denominator2 + ' - '+ numerator1 + '/'+ denominator1+ ' = ';
       }
+      result = s + '/' + denominator2*denominator1;
+      coin = 5;
         return {
           title: e,
-          result: s + '/' + denominator2*denominator1,
-          check: fractionCheck
+          check: function(r) {
+            if(fractionCheck(r, result)) {
+              return coin;
+            } else {
+              return 0;
+            }
+          }
         };
     },
     fractionM: function(){ //addition in 10;
@@ -229,10 +374,17 @@ Puzzles = {
 
       denominator = denominator1*denominator2;
       sum = numerator1*numerator2;
+      result = sum+'/'+denominator;
+      coin = 10;
         return {
           title: ''+ numerator1 +'/'+denominator1 + ' X ' + numerator2 +'/'+denominator2+ ' = ',
-          result: sum+'/'+denominator,
-          check: fractionCheck
+          check: function(r) {
+            if(fractionCheck(r, result)) {
+              return coin;
+            } else {
+              return 0;
+            }
+          }
         };
     },
     fractionD: function(){ //addition in 10;
@@ -250,10 +402,18 @@ Puzzles = {
 
       denominator = denominator1*numerator2;
       sum = numerator1*denominator2;
+      result = sum+'/'+denominator;
+      coin: 12;
         return {
           title: ''+ numerator1 +'/'+denominator1 + ' \u00F7 ' + numerator2 +'/'+denominator2+ ' = ',
-          result: sum+'/'+denominator,
-          check: fractionCheck
+          check: function(r) {
+            if(fractionCheck(r, result)) {
+              return coin;
+            } else {
+              return 0;
+            }
+          },
+
         };
     }
 }
