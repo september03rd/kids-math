@@ -73,62 +73,23 @@
     <div id="customized-puzzle" class="container">
       <div id="question-description">笼子里一共有8只动物。数了一下，有8个头，20只脚。问笼子里有几只鸡？</div>
       <div id="answers">
-        <!-- Default inline 1-->
         <form id="answerForm">
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" class="custom-control-input" id="answer0" value="0" name="answer">
-            <label class="custom-control-label" for="answer0" id="label0">8</label>
-          </div>
-
-          <!-- Default inline 2-->
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" class="custom-control-input" id="answer1" value="1" name="answer">
-            <label class="custom-control-label" for="answer1" id="label1">9</label>
-          </div>
-
-          <!-- Default inline 3-->
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" class="custom-control-input" id="answer2" value="2" name="answer">
-            <label class="custom-control-label" for="answer2" id="label2">12</label>
-          </div>
-
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" class="custom-control-input" id="answer3" value="3" name="answer">
-            <label class="custom-control-label" for="answer3" id="label3">15</label>
-          </div>
-
-          <div>
-            <button type="submit">Confirm</button>
-          </div>
         </form>
       </div>
     </div>
     <div id="predefined-puzzle">
+
       <div id="question-area" class="d-flex justify-content-center">
         <span id="question-title" class="question-block"></span><span id="input-echo" class="question-block"></span>
       </div>
+
       <div id="keyboard" class="container">
-        <div class="d-flex justify-content-center">
-          <button type="button" class="btn btn-warning keypad" id="1" onclick="App.number_click(this.id)">1</button>
-          <button type="button" class="btn btn-warning keypad" id="2" onclick="App.number_click(this.id)">2</button>
-          <button type="button" class="btn btn-warning keypad" id="3" onclick="App.number_click(this.id)">3</button>
-          <button type="button" class="btn btn-warning keypad" id="4" onclick="App.number_click(this.id)">4</button>
-          <button type="button" class="btn btn-warning keypad" id="5" onclick="App.number_click(this.id)">5</button>
-          <button type="button" class="btn btn-warning keypad" id="6" onclick="App.number_click(this.id)">6</button>
-          <button type="button" class="btn btn-warning keypad" id="r" onclick="App.number_click(this.id)"><i class="fas fa-backspace"></i></button>
-
+        <div id="pad1" class="d-flex justify-content-center">
         </div>
-        <div class="d-flex justify-content-center">
-          <button type="button" class="btn btn-warning keypad" id="7" onclick="App.number_click(this.id)">7</button>
-          <button type="button" class="btn btn-warning keypad" id="8" onclick="App.number_click(this.id)">8</button>
-          <button type="button" class="btn btn-warning keypad" id="9" onclick="App.number_click(this.id)">9</button>
-          <button type="button" class="btn btn-warning keypad" id="0" onclick="App.number_click(this.id)">0</button>
-
-          <button type="button" class="btn btn-warning keypad" id="/" onclick="App.number_click(this.id)">/</button>
-          <button type="button" class="btn btn-warning keypad" id="." onclick="App.number_click(this.id)">.</button>
-          <button type="button" class="btn btn-warning keypad" id="=" onclick="App.number_click(this.id)"><i class="fas fa-check"></i></button>
+        <div id="pad2" class="d-flex justify-content-center">
         </div>
       </div>
+
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

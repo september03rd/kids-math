@@ -85,12 +85,46 @@ App = {
       App.inputEcho += id;
     }
     $('#input-echo').text(App.inputEcho)
+  },
+  build_keyboard: function() {
+    arr = shuffle([1,2,3,4,5,6,7,8,9,0]);
+    var i;
+    str = '';
+    for(i = 0;i < 6; i++) {
+      str += '<button type="button" class="btn btn-warning keypad" id="'+arr[i]+'" onclick="App.number_click(this.id)">'+arr[i]+'</button>';
+    }
+    str += '<button type="button" class="btn btn-warning keypad" id="r" onclick="App.number_click(this.id)"><i class="fas fa-backspace"></i></button>';
+    $('#pad1').html(str);
+
+    str = '';
+    for(i = 6;i < 10; i++) {
+      str += '<button type="button" class="btn btn-warning keypad" id="'+arr[i]+'" onclick="App.number_click(this.id)">'+arr[i]+'</button>';
+    }
+    str += '<button type="button" class="btn btn-warning keypad" id="/" onclick="App.number_click(this.id)">/</button>';
+    str += '<button type="button" class="btn btn-warning keypad" id="." onclick="App.number_click(this.id)">.</button>';
+    str += '<button type="button" class="btn btn-warning keypad" id="=" onclick="App.number_click(this.id)"><i class="fas fa-check"></i></button>';
+    $('#pad2').html(str);
+  },
+  build_answer_form: function() {
+    var i = 0;
+    str = ''
+    for(i = 0; i < 4; i++) {
+      str += '<div class="custom-control custom-radio custom-control-inline"><input type="radio" class="custom-control-input" id="answer'+i+'" value="'+i+'" name="answer"><label class="custom-control-label" for="answer'+i+'" id="label'+i+'"></label></div>';
+    }
+    str += '<div><button type="submit">Confirm</button></div>';
+
+    $('#answerForm').html(str);
   }
 }
 
+function shuffle(array){
+  return array.sort((a,b) => 0.5 - Math.random());
+}
 
 $(function() {
   $(window).ready(function () {
        App.init();
+       App.build_keyboard();
+       App.build_answer_form();
   });
 });
