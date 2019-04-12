@@ -15,6 +15,11 @@ input {
     vertical-align: baseline;
 }
 
+#puzzle-options {
+  font-size: 1.5em;
+  font-family: "Fredoka One";
+}
+
 #question-description {
   margin-top: 5%;
   font-size: 2em;

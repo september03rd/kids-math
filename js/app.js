@@ -78,8 +78,13 @@ App = {
     } else if (id === '='){
       console.log(App.inputEcho);
       score = App.check(App.inputEcho);
-      console.log(score);
-      App.triggerResult(score);
+      // console.log(score);
+      if(score == 0) {
+        $('#audiotag2').trigger('play');
+      } else {
+        App.triggerResult(score);
+        $('#audiotag1').trigger('play');
+      }
       App.buildPuzzle();
     } else {
       App.inputEcho += id;
@@ -116,7 +121,7 @@ App = {
     $('#answerForm').html(str);
   },
   build_puzzle_options: function() {
-    str = '<nav class="navbar navbar-expand-lg navbar-light bg-light"><div class="collapse navbar-collapse"><ul class="navbar-nav mr-auto">';
+    str = '<nav class="navbar navbar-expand-lg navbar-light bg-transparent"><div class="collapse navbar-collapse"><ul class="navbar-nav mr-auto">';
     options=""
     types = puzzleList.length;
     var i;
@@ -148,5 +153,7 @@ $(function() {
        App.build_keyboard();
        App.build_answer_form();
        App.build_puzzle_options();
+       $('#audiotag1').trigger('load');
+       $('#audiotag2').trigger('load');
   });
 });
