@@ -20,7 +20,7 @@ Puzzles = {
   add2: function(){ //addition in 10;
     left = Puzzles.randomizer(1,7);
     result = left + 2;
-    coin = 1;
+    coin = 2;
     return {
       title: ''+left+' + 2'+' = ',
       check: function(r) {
@@ -35,7 +35,7 @@ Puzzles = {
   add3: function(){ //addition in 10;
     left = Puzzles.randomizer(1,6);
     result = left + 3;
-    coin = 1;
+    coin = 3;
     return {
       title: ''+left+' + 3'+ ' = ',
       check: function(r) {
@@ -51,7 +51,7 @@ Puzzles = {
     left = Puzzles.randomizer(1,8);
     right = Puzzles.randomizer(1,9-left);
     result = left + right;
-    coin = 1;
+    coin = 5;
     return {
       title: ''+left+' + '+right+' = ',
       check: function(r) {
@@ -67,7 +67,7 @@ Puzzles = {
     left = Puzzles.randomizer(2,9);
     right = Puzzles.randomizer(10-left, 9);
     result = left + right;
-    coin = 2;
+    coin = 10;
     return {
       title: ''+left+' + '+right+' = ',
       check: function(r) {
@@ -83,7 +83,7 @@ Puzzles = {
     left = Puzzles.randomizer(10,88);
     right = Puzzles.randomizer(10,90-left);
     result = left + right;
-    coin = 5;
+    coin = 20;
     return {
       title: ''+left+' + '+right+' = ',
       check: function(r) {
@@ -99,7 +99,7 @@ Puzzles = {
     left = Puzzles.randomizer(2,9);
     right = Puzzles.randomizer(1, left);
     result = left - right;
-    coin = 2;
+    coin = 5;
     return {
       title: ''+left+' - '+right+' = ',
       check: function(r) {
@@ -115,7 +115,7 @@ Puzzles = {
     left = Puzzles.randomizer(2,9);
     right = Puzzles.randomizer(10-left, 9);
     result = left + right;
-    coin = 3;
+    coin = 10;
     return {
       title: ''+result+' - '+left+' = ',
       check: function(r) {
@@ -131,7 +131,7 @@ Puzzles = {
     left = Puzzles.randomizer(11,99);
     right = Puzzles.randomizer(10, left);
     result = left - right;
-    coin = 5;
+    coin = 15;
     return {
       title: ''+left+' - '+right+' = ',
       check: function(r) {
@@ -147,7 +147,7 @@ Puzzles = {
       left = Puzzles.randomizer(1,9);
       right = Puzzles.randomizer(1, 9);
       result = left * right;
-      coin = 2;
+      coin = 10;
       return {
         title: ''+left+' X '+right+' = ',
         check: function(r) {
@@ -163,7 +163,7 @@ Puzzles = {
         left = Puzzles.randomizer(11,19);
         right = Puzzles.randomizer(11, 19);
         result = left * right;
-        coin = 5;
+        coin = 15;
         return {
           title: ''+left+' X '+right+' = ',
           check: function(r) {
@@ -179,7 +179,7 @@ Puzzles = {
         left = Puzzles.randomizer(11,99);
         right = Puzzles.randomizer(11, 99);
         result = left * right;
-        coin = 10;
+        coin = 20;
         return {
           title: ''+left+' X '+right+' = ',
           check: function(r) {
@@ -195,7 +195,7 @@ Puzzles = {
       left = Puzzles.randomizer(1,9);
       right = Puzzles.randomizer(1, 9);
       result = left * right;
-      coin = 2;
+      coin = 10;
         return {
           title: ''+result+' \u00F7 '+right+' = ',
           check: function(r) {
@@ -211,7 +211,7 @@ Puzzles = {
       left = Puzzles.randomizer(11,19);
       right = Puzzles.randomizer(11, 19);
       result = left * right;
-      coin = 10;
+      coin = 20;
         return {
           title: ''+result+' \u00F7 '+right+' = ',
           check: function(r) {
@@ -227,7 +227,7 @@ Puzzles = {
       left = Puzzles.randomizer(11,99);
       right = Puzzles.randomizer(11, 99);
       result = left * right;
-      coin = 15;
+      coin = 25;
         return {
           title: ''+result+' \u00F7 '+right+' = ',
           check: function(r) {
@@ -244,7 +244,7 @@ Puzzles = {
       numerator1 = Puzzles.randomizer(1, denominator-1);
       numerator2 = Puzzles.randomizer(1, denominator-numerator1);
       sum = numerator1+numerator2;
-      coin = 2;
+      coin = 5;
       result = sum+'/'+denominator;
         return {
           title: ''+ numerator1 +'/'+denominator + ' + ' + numerator2 +'/'+denominator+ ' = ',
@@ -264,7 +264,7 @@ Puzzles = {
       numerator2 = Puzzles.randomizer(1, denominator-1);
       sum = numerator1+numerator2;
       result= sum+'/'+denominator;
-      coin = 2;
+      coin = 8;
         return {
           title: ''+ numerator1 +'/'+denominator + ' + ' + numerator2 +'/'+denominator+ ' = ',
           check: function(r) {
@@ -292,7 +292,7 @@ Puzzles = {
       denominator = denominator1*denominator2;
       sum = numerator1*denominator2 + denominator1*numerator2;
       result= sum+'/'+denominator;
-      coin = 5;
+      coin = 10;
 
         return {
           title: ''+ numerator1 +'/'+denominator1 + ' + ' + numerator2 +'/'+denominator2+ ' = ',
@@ -347,7 +347,7 @@ Puzzles = {
         e = ''+ numerator2+'/'+ denominator2 + ' - '+ numerator1 + '/'+ denominator1+ ' = ';
       }
       result = s + '/' + denominator2*denominator1;
-      coin = 5;
+      coin = 15;
         return {
           title: e,
           check: function(r) {
@@ -375,7 +375,7 @@ Puzzles = {
       denominator = denominator1*denominator2;
       sum = numerator1*numerator2;
       result = sum+'/'+denominator;
-      coin = 10;
+      coin = 15;
         return {
           title: ''+ numerator1 +'/'+denominator1 + ' X ' + numerator2 +'/'+denominator2+ ' = ',
           check: function(r) {
@@ -403,7 +403,7 @@ Puzzles = {
       denominator = denominator1*numerator2;
       sum = numerator1*denominator2;
       result = sum+'/'+denominator;
-      coin: 12;
+      coin: 25;
         return {
           title: ''+ numerator1 +'/'+denominator1 + ' \u00F7 ' + numerator2 +'/'+denominator2+ ' = ',
           check: function(r) {
